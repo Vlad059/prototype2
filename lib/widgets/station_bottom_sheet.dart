@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'charge_progress.dart';
+import 'charge_station_item.dart';
+
 import '../style/styles.dart';
 
 class StationBottomSheet extends StatefulWidget {
@@ -34,24 +37,15 @@ class _StationBottomSheetState extends State<StationBottomSheet> {
         ),
         child: SingleChildScrollView(
           child: Column(
-            children: [
-              Container(
-                width: 200,
-                color: Colors.blue,
-                child: Column(
-                  children: const [
-                    Text('15:20',
-                      style: TextStyles.chargeTimeTextStyle,
-                    ),
-                    Text('зарядка',
-                      style: TextStyles.chargeCaptureTextStyle,
-                    ),
-                    LinearProgressIndicator(
-                      value: 0.2,
-                    )
-                  ],
-                ),
-              )
+            children: const [
+              Divider(
+                thickness: 3,
+                color: AppColors.dividerColor,
+                indent: 160,
+                endIndent: 160,
+              ),
+              ChargeProgress(),
+              ChargeStationItem()
             ],
           )
         )

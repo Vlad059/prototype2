@@ -57,7 +57,8 @@ class _MainScaffoldState extends State<MainScaffold> {
                   bottom: 0,
                   height: value.value ? MediaQuery.of(context).size.height * 0.7 : 0,
                   width: MediaQuery.of(context).size.width,
-                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                  duration: const Duration(milliseconds: 350),
                   child: StationBottomSheet(
                       onClose: (){
                         value.value = false;
