@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'charge_data.dart';
 import 'charge_progress.dart';
 import 'charge_station_item.dart';
 
@@ -36,17 +37,41 @@ class _StationBottomSheetState extends State<StationBottomSheet> {
           )
         ),
         child: SingleChildScrollView(
-          child: Column(
-            children: const [
-              Divider(
-                thickness: 3,
-                color: AppColors.dividerColor,
-                indent: 160,
-                endIndent: 160,
-              ),
-              ChargeProgress(),
-              ChargeStationItem()
-            ],
+          physics: const NeverScrollableScrollPhysics(),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.7,
+            child: Column(
+              children: [
+                const Divider(
+                  thickness: 3,
+                  color: AppColors.dividerColor,
+                  indent: 160,
+                  endIndent: 160,
+                ),
+                const ChargeProgress(),
+                const ChargeStationItem(),
+                const ChargeData(),
+                Expanded(
+                    child: Center(
+                      child: OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            backgroundColor: AppColors.commonButtonColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8)
+                            ),
+                            minimumSize: const Size(350, 60),
+                          ),
+                          onPressed: (){
+
+                          },
+                          child: const Text('Остановить зарядку',
+                            style: AppTextStyles.chargeCaptureTextStyle
+                          )
+                      ),
+                    )
+                )
+              ],
+            ),
           )
         )
       )

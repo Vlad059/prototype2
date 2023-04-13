@@ -9,7 +9,7 @@ class ChargeStationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 308,
       child: Column(
         children: [
