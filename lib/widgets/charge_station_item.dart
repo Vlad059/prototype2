@@ -10,8 +10,7 @@ class ChargeStationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 350,
+      width: 308,
       child: Column(
         children: [
           Row(
@@ -22,16 +21,70 @@ class ChargeStationItem extends StatelessWidget {
               ),
               OutlinedButton(
                   style: OutlinedButton.styleFrom(
-                    side: BorderSide.none
+                    side: BorderSide.none,
+                    alignment: const Alignment(5,0)
                   ),
                   onPressed: (){
 
                   },
-                  child: SvgPicture.asset('lib/assets/favorite-icon.svg')
+                  child: SvgPicture.asset(
+                      'lib/assets/favorite-icon.svg',
+                      width: 24,
+                      height: 24
+                  )
               )
             ],
           ),
-          Row(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  SvgPicture.asset('lib/assets/route-icon.svg',
+                    width: 20,
+                    height: 20,
+                  ),
+                  const Text('0.5км',
+                    style: AppTextStyles.chargeStationSubTextStyle,
+                  ),
+                  OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                          side: BorderSide.none,
+                      ),
+                      onPressed: (){
+
+                      },
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                              'lib/assets/navigation-icon.svg',
+                              width: 18,
+                              height: 18
+                          ),
+                          const Text('маршрут',
+                            style: AppTextStyles.chargeStationSubTextStyle,
+                          ),
+                        ],
+                      )
+                  ),
+                  SvgPicture.asset('lib/assets/type1-icon.svg',
+                    width: 20,
+                    height: 20,
+                  ),
+                  const VerticalDivider(
+                    width: 4,
+                  ),
+                  SvgPicture.asset('lib/assets/type2-icon.svg',
+                    width: 20,
+                    height: 20,
+                  ),
+                ],
+              ),
+              const Text('#6935',
+                style: AppTextStyles.chargeStationSubGrayTextStyle ,
+              ),
+            ],
+          ),
         ],
       )
     );

@@ -25,8 +25,8 @@ class ChargeProgress extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                vertical: 4,
-                horizontal: 20
+                vertical: 8,
+                horizontal: 24
             ),
             child: LinearProgressIndicator(
               value: 0.2,

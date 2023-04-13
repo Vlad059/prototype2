@@ -21,6 +21,22 @@ class AppTextStyles {
       fontWeight: FontWeight.w500,
       fontFamily: 'Inter'
   );
+
+  static const TextStyle chargeStationSubTextStyle = TextStyle(
+      color: Colors.black,
+      fontSize: 14,
+      decoration: TextDecoration.none,
+      fontWeight: FontWeight.w500,
+      fontFamily: 'Inter'
+  );
+
+  static const TextStyle chargeStationSubGrayTextStyle = TextStyle(
+      color: Color.fromRGBO(144, 144, 144, 1),
+      fontSize: 14,
+      decoration: TextDecoration.none,
+      fontWeight: FontWeight.w500,
+      fontFamily: 'Inter'
+  );
 }
 
 class AppColors {
