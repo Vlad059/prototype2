@@ -52,9 +52,11 @@ class _BottomSheetState extends State<BottomSheet> {
     }
   }
 
-  void onPanUpdate(DragUpdateDetails details) {
+  void onPanUpdate(DragUpdateDetails details, BottomSheetVisibility notifier) {
     if (details.delta.dy > 0) {
-      _currentSheetHeight = 0;
+      _currentSheetHeight =0;
+
+      notifier.value = false;
     }
   }
 
@@ -65,7 +67,7 @@ class _BottomSheetState extends State<BottomSheet> {
         changeCurrentHeight(visibilityNotifier.value, context);
 
         return GestureDetector(
-           onPanUpdate: onPanUpdate,
+           onPanUpdate: (details)=> onPanUpdate(details, visibilityNotifier),
            child: AnimatedContainer(
                 width: sheetWidth,
                 height: _currentSheetHeight,
