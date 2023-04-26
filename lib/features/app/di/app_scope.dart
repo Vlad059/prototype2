@@ -5,7 +5,7 @@ abstract class IAppScope {
   IStyleService get appStyles;
 }
 
-class AppScope extends IAppScope{
+class AppScope extends IAppScope {
   @override
   IStyleService appStyles = StyleService();
 }
